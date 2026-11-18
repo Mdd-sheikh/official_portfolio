@@ -31,7 +31,12 @@ export const metadata: Metadata = {
     "Razorpay integration", "Cloudinary", "Shipmozo", "AWS", "e-commerce developer India", "freelance web developer",
   ],
   alternates: { canonical: "/" },
-  verification: { google: "u2cOgeHWWJr0bOxIiUtTjzYiTTwUr-MULwYDonB_wcQ" },
+  verification: {
+    google: [
+      "u2cOgeHWWJr0bOxIiUtTjzYiTTwUr-MULwYDonB_wcQ",
+      "Ta1-l9HzhaAQEPVIq-3YOj8teG_mPHcGKthbRABfzl0",
+    ],
+  },
   openGraph: {
     type: "website",
     url: "/",
