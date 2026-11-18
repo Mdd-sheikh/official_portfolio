@@ -2,7 +2,7 @@ import type { Metadata, Viewport } from "next";
 import { Space_Grotesk } from "next/font/google";
 import Consent from "@/components/Consent";
 import { profile } from "@/lib/data";
-import { siteName, siteUrl } from "@/lib/site";
+import { siteName, siteUrl, adsenseClient } from "@/lib/site";
 import "./globals.css";
 import "./creative.css";
 import "./glass.css";
@@ -15,6 +15,9 @@ const font = Space_Grotesk({
   subsets: ["latin"],
   weight: ["300", "400", "500", "700"],
 });
+
+// Falls back to the hardcoded id if NEXT_PUBLIC_ADSENSE_CLIENT is not set in Vercel.
+const adsense = adsenseClient || "ca-pub-8178245553308553";
 
 const description =
   "Aadil is a web developer building fast, modern websites and web apps with React, Next.js, Node.js and Express. See live projects, skills and articles on Razorpay, Cloudinary and Shipmozo integrations.";
@@ -36,6 +39,9 @@ export const metadata: Metadata = {
       "u2cOgeHWWJr0bOxIiUtTjzYiTTwUr-MULwYDonB_wcQ",
       "Ta1-l9HzhaAQEPVIq-3YOj8teG_mPHcGKthbRABfzl0",
     ],
+  },
+  other: {
+    "google-adsense-account": adsense,
   },
   openGraph: {
     type: "website",
