@@ -78,7 +78,7 @@ export default function Intro() {
       {phase === "ask" && (
         <div className="intro-box">
           <p className="eyebrow">Before we begin</p>
-          <h1 id="intro-title" className="intro-title">Are you <span className="grad">ready?</span></h1>
+          <h2 id="intro-title" className="intro-title">Are you <span className="grad">ready?</span></h2>
           <p className="intro-sub">A quick tour of my skills, projects and a few surprises.</p>
           <div className="cta">
             <button ref={yes} type="button" className="btn btn-solid" onClick={go}>Yes, I am ready</button>
@@ -92,12 +92,12 @@ export default function Intro() {
       {phase !== "ask" && (
         <div className="intro-box intro-welcome">
           <p className="eyebrow">Welcome to</p>
-          <h1 id="intro-title" className="intro-title" aria-label={text}>
+          <h2 id="intro-title" className="intro-title" aria-label={text}>
             <span aria-hidden="true">
               <span className="grad">{text.slice(0, typed)}</span>
               <span className="caret" />
             </span>
-          </h1>
+          </h2>
         </div>
       )}
     </div>

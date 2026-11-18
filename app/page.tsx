@@ -2,16 +2,19 @@ import Hero from "@/components/Hero";
 import Explore from "@/components/Explore";
 import Visitor from "@/components/Visitor";
 import Skills from "@/components/Skills";
+import Pipeline from "@/components/Pipeline";
 import Terminal from "@/components/Terminal";
 import Dock from "@/components/Dock";
 import Intro from "@/components/Intro";
+import { Footer } from "@/components/PageShell";
 import { Counter, Cursor, Reveal, ScrollProgress } from "@/components/Fx";
-import { profile } from "@/lib/data";
+import { profile, projects } from "@/lib/data";
+import { siteUrl } from "@/lib/site";
 
 const stats = [
   { to: 3, suffix: "", label: "Live projects" },
   { to: 100, suffix: "%", label: "Responsive builds" },
-  { to: 10, suffix: "+", label: "Tools & skills" },
+  { to: 15, suffix: "+", label: "Tools & skills" },
   { to: 24, suffix: "/7", label: "Curiosity" },
 ];
 
@@ -22,15 +25,47 @@ const steps = [
   { t: "Launch", d: "Test on real devices, ship it live and keep improving." },
 ];
 
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Person",
+      "@id": `${siteUrl}/#person`,
+      name: profile.name,
+      jobTitle: profile.role,
+      url: siteUrl,
+      description: profile.tagline,
+      knowsAbout: ["React", "Next.js", "Node.js", "Express.js", "Razorpay", "Cloudinary", "Shipmozo", "AWS", "Web design"],
+      sameAs: profile.socials.map((s) => s.href),
+    },
+    {
+      "@type": "WebSite",
+      "@id": `${siteUrl}/#website`,
+      url: siteUrl,
+      name: `${profile.name} Portfolio`,
+      publisher: { "@id": `${siteUrl}/#person` },
+      inLanguage: "en",
+    },
+    ...projects.map((p) => ({
+      "@type": "CreativeWork",
+      name: p.title,
+      url: p.url,
+      description: p.blurb,
+      creator: { "@id": `${siteUrl}/#person` },
+    })),
+  ],
+};
+
 export default function Home() {
   return (
     <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd).replace(/</g, "\\u003c") }} />
       <Intro />
       <Cursor />
       <ScrollProgress />
       <div id="page-root">
         <Hero />
-        <main>
+        <main id="main">
           <Visitor />
 
           <section className="numbers" id="numbers" aria-labelledby="numbers-title">
@@ -48,6 +83,7 @@ export default function Home() {
           </section>
 
           <Skills />
+          <Pipeline />
           <Terminal />
 
           <section className="process" id="process" aria-labelledby="process-title">
@@ -70,10 +106,7 @@ export default function Home() {
 
           <Explore />
         </main>
-        <footer className="footer">
-          <span>© 2026 {profile.name}</span>
-          <a href="#top">Back to top ↑</a>
-        </footer>
+        <Footer />
       </div>
       <Dock />
     </>

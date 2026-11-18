@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { profile, marquee } from "@/lib/data";
 import { RotatingWord } from "@/components/Fx";
 import Globe from "@/components/Globe";
@@ -13,7 +14,8 @@ export default function Hero() {
         </a>
         <nav className="topnav" aria-label="Sections">
           <a href="#skills">Skills</a>
-          <a href="#terminal">Terminal</a>
+          <Link href="/projects">Projects</Link>
+          <Link href="/blog">Blog</Link>
           <a className="pill" href="#explore">Explore</a>
         </nav>
       </header>

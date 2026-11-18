@@ -40,7 +40,7 @@ export const projects = [
 ];
 
 export const skills = [
-  "HTML", "CSS", "JavaScript", "React", "Next.js", "Responsive Design", "UI Design", "Animation", "Git",
+  "HTML", "CSS", "JavaScript", "React", "Next.js", "Node.js", "Express.js", "Razorpay", "Cloudinary", "Shipmozo", "AWS", "Claude", "UI Design", "Animation", "Git",
 ];
 
 // Levels (0-100) are placeholders. Set them to what you honestly feel.
@@ -70,6 +70,23 @@ export const skillGroups = [
       { name: "VS Code", level: 85, note: "Daily editor and workflow" },
     ],
   },
+  {
+    name: "Backend",
+    items: [
+      { name: "Node.js", level: 80, note: "Server-side JavaScript and APIs" },
+      { name: "Express.js", level: 80, note: "REST APIs, routes and middleware" },
+      { name: "AWS", level: 65, note: "Cloud hosting and infrastructure" },
+      { name: "Claude (AI)", level: 80, note: "AI-assisted coding, research and content" },
+    ],
+  },
+  {
+    name: "Integrations",
+    items: [
+      { name: "Razorpay", level: 80, note: "Payments: orders, checkout, signature checks, webhooks" },
+      { name: "Cloudinary", level: 80, note: "Image upload, optimization and delivery" },
+      { name: "Shipmozo", level: 75, note: "Shipping: booking shipments and tracking" },
+    ],
+  },
 ];
 
 export const extras = [
@@ -80,5 +97,5 @@ export const extras = [
 ];
 
 export const marquee = [
-  "Design", "Development", "Animation", "Responsive", "Performance", "Branding", "Web Apps", "E-commerce",
+  "Node.js", "Express.js", "Razorpay", "Cloudinary", "Shipmozo", "AWS", "Claude", "Next.js", "E-commerce", "Animation",
 ];
