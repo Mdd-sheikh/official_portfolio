@@ -1,3 +1,5 @@
+import { morePosts } from "./posts-more";
+
 export type Section = { h: string; p: string[]; code?: string };
 export type Post = {
   slug: string;
@@ -582,6 +584,7 @@ app.use(express.json({ limit: "100kb" }));`,
       },
     ],
   },
+  ...morePosts,
 ];
 
 export const getPost =(slug: string) => posts.find((p) => p.slug === slug);
