@@ -17,6 +17,7 @@ export default function Hero() {
           <Link href="/projects">Projects</Link>
           <Link href="/blog">Blog</Link>
           <a className="pill" href="#explore">Explore</a>
+          <a className="menu-btn" href="#open" aria-haspopup="dialog">Menu</a>
         </nav>
       </header>
 

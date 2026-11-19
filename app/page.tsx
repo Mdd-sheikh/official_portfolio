@@ -4,6 +4,12 @@ import Visitor from "@/components/Visitor";
 import Skills from "@/components/Skills";
 import Pipeline from "@/components/Pipeline";
 import Terminal from "@/components/Terminal";
+import Estimator from "@/components/Estimator";
+import MenuOverlay from "@/components/MenuOverlay";
+import Services from "@/components/Services";
+import SendForm from "@/components/SendForm";
+import SignatureLab from "@/components/SignatureLab";
+import ImageLab from "@/components/ImageLab";
 import Dock from "@/components/Dock";
 import Intro from "@/components/Intro";
 import { Footer } from "@/components/PageShell";
@@ -61,6 +67,7 @@ export default function Home() {
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd).replace(/</g, "\\u003c") }} />
       <Intro />
+      <MenuOverlay />
       <Cursor />
       <ScrollProgress />
       <div id="page-root">
@@ -85,6 +92,9 @@ export default function Home() {
           <Skills />
           <Pipeline />
           <Terminal />
+          <SignatureLab />
+          <ImageLab />
+          <Estimator />
 
           <section className="process" id="process" aria-labelledby="process-title">
             <Reveal>
@@ -104,7 +114,9 @@ export default function Home() {
             </ol>
           </section>
 
+          <Services />
           <Explore />
+          <SendForm />
         </main>
         <Footer />
       </div>
